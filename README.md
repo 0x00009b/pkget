@@ -21,3 +21,7 @@ PLEASE USE THIS TOOL FOR GOOD
 
 
 #DontBeAskid
+
+# also 
+
+if you like it please consider staring it and following me :-) for more cool stuff i have good ideas sometimes 
