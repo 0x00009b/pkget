@@ -15,13 +15,10 @@ echo "
 echo starting install...
 echo curent user is $USER
 echo press ctrl-D to stop 
-# fail fast
+echo #####################
+
 set -e
-
-# debug
-# set -x
-
-# parse and derive params
+set -x
 
 BUILD_DIR=/home/$USER
 CACHE_DIR=/tmp
@@ -57,8 +54,8 @@ APT_OPTIONS="$APT_OPTIONS -o dir::etc::sourcelist=$APT_SOURCES"
 rm -rf $APT_CACHE_DIR
 mkdir -p "$APT_CACHE_DIR/archives/partial"
 mkdir -p "$APT_STATE_DIR/lists/partial"
-mkdir -p "$APT_SOURCELIST_DIR"   # make dir for sources
-cat "/etc/apt/sources.list" > "$APT_SOURCES"    # no cp here
+mkdir -p "$APT_SOURCELIST_DIR"
+cat "/etc/apt/sources.list" > "$APT_SOURCES"
 
 topic "Updating apt caches"
 apt-get $APT_OPTIONS update | indent
@@ -86,14 +83,21 @@ done
 topic "Rewrite package-config files"
 find $BUILD_DIR/.apt -type f -ipath '*/pkgconfig/*.pc' | xargs --no-run-if-empty -n 1 sed -i -e 's!^prefix=\(.*\)$!prefix='"$BUILD_DIR"'/.apt\1!g'
 echo "##################################" 
-  echo install details
-  echo package:
-  echo $PACKAGE_NAME
-  echo user:
-  echo $USER
-  echo cahche_dir:
-  echo $APT_CACHE_DIR
-  echo sources:
-  echo $APT_SOURCELIST_DIR
-echo "#################################"
+  echo -------START NE INSTALL----- >> pget.log
+  echo install details >> pget.log
+  echo package: >> pget.log
+  echo $PACKAGE_NAME >> pget.log
+  echo build dir:  >> pget.log
+  echo $BUILD_DIR  >> pget.log
+  echo user:  >> pget.log
+  echo $USER  >> pget.log
+  echo cahche_dir: >> pget.log
+  echo $APT_CACHE_DIR >> pget.log
+  echo source list dir: >> pget.log
+  echo $APT_SOURCELIST_DIR >> pget.log
+  echo -------END NEW INSTALL------ >> pget.log
+  echo system:
+  uname -a 
+  echo "install details saved to logfile"
+echo "##################################"
   
