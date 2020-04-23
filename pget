@@ -18,7 +18,6 @@ echo press ctrl-D to stop
 echo #####################
 
 set -e
-set -x
 
 BUILD_DIR=/home/$USER
 CACHE_DIR=/tmp
