@@ -6,10 +6,10 @@ echo "user home is $HOME"
 echo "press ctrl-D to stop"
 echo "WARNING: pleae make sure this in you're in you're home directory otherwise things may break"
 echo "but dont wory this script should do it for you : ) "
-chmod +x pkget
 mv pget pget-dev
 mv pkget-dev $HOME
 mv $HOME/pget-dev pget
+chmod +x $HOME/pget
 echo this will only take a second
 echo modifying the PATH....
 echo export PATH="$PATH:/home/$USER/.apt/usr/bin" >> .bashrc
