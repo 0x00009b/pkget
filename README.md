@@ -1,4 +1,4 @@
-# pget
+# pkget
 
 Used for installing packages for when you dont have root when you dont have root and/or sudo it's as simple as that really 
 
