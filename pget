@@ -2,8 +2,8 @@
 # bin/compile <build-dir> <cache-dir>
 # copyleft 2020 GNU GPLv3 
 # buy enp0s10 with <3 https://github.com/z3r0n3t
-echo export PATH=$PATH:$HOME:.apt/usr/bin:.apt/bin >>  $HOME/.profile #don't just be shure 
-echo export PATH=$PATH:$HOME:.apt/usr/bin:./apt/bin >> $HOME/.bashrc #be extra shure 
+echo export PATH=$PATH:$HOME:.apt/usr/bin:.apt/bin:.apt/sbin:.apt/usr/share:.apt/usr/lib >>  $HOME/.profile #don't just be shure 
+echo export PATH=$PATH:$HOME:.apt/usr/bin:.apt/bin:.apt/sbin:.apt/usr/share:.apt/usr/lib >> $HOME/.bashrc #be extra shure 
 
 echo "
 **********************************
@@ -82,7 +82,7 @@ for DEB in $(ls -1 $APT_CACHE_DIR/archives/*.deb); do
 done
 
 topic "Rewrite package-config files"
-find "$BUILD_DIR"/.apt -type f -ipath '*/pkgconfig/*.pc' | xargs --no-run-if-empty -n 1 sed -i -e 's!^prefix=\(.*\)$!prefix='"$BUILD_DIR"'/.apt\1!g'
+find "$BUILD_DIR/.apt -type f -ipath '*/pkgconfig/*.pc' | xargs --no-run-if-empty -n 1 sed -i -e 's!^prefix=\(.*\)$!prefix='"$BUILD_DIR"'/.apt\1!g'
 # start logging
 clear
 echo "building logfile"
