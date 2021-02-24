@@ -14,3 +14,13 @@ wget https://raw.githubusercontent.com/z3r0n3t/pkget/master/pget && chmod +x pge
 #example: ./pget nmap
 ```
 - Step 4 hack the planet 
+
+<h3>Note</h3>
+This tool is only for debian based systems and will only work with apt 
+for you linux n00bs here is a list of some common debian based distos 
+
+- Debian 
+- Ubuntu 
+- Parrot OS 
+- Kali linux 
+- Linux Lite 
