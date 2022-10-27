@@ -77,7 +77,7 @@ done
 topic "Rewrite package-config files"
 find $BUILD_DIR/.apt -type f -ipath '*/pkgconfig/*.pc' | xargs --no-run-if-empty -n 1 sed -i -e 's!^prefix=\(.*\)$!prefix='$BUILD_DIR'/.apt\1!g'
 # start logging
-clear
+# clear
 echo "building logfile"
 echo "-------START NEW INSTALL-----" >> pget.log
 echo "install date:" >> pget.log
