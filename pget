@@ -98,8 +98,7 @@ echo "$APT_CACHE_DIR" >> pget.log
 echo "source list dir:" >> pget.log
 echo "$APT_SOURCELIST_DIR" >> pget.log
 echo "-------END NEW INSTALL------" >> pget.log
-. $HOME/.bashrc
-clear
+# clear
 echo "install details saved to logfile"
 echo "TIP: to see the log file type cat pget.log"
 echo " All done :-)"
