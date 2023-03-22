@@ -3,8 +3,9 @@
 # bin/compile <build-dir> <cache-dir>
 # copyleft 2020 GNU GPLv3 
 # buy enp0s10 with <3 https://github.com/z3r0n3t
-echo export PATH=$PATH:$HOME:.apt/usr/bin:.apt/bin:.apt/sbin:.apt/usr/share:.apt/usr/lib >>  $HOME/.profile #don't just be shure 
-echo export PATH=$PATH:$HOME:.apt/usr/bin:.apt/bin:.apt/sbin:.apt/usr/share:.apt/usr/lib >> $HOME/.bashrc #be extra shure 
+# echo export PATH=$PATH:$HOME:.apt/usr/bin:.apt/bin:.apt/sbin:.apt/usr/share:.apt/usr/lib >  $HOME/.profile #don't just be shure 
+echo export PATH=$PATH:$HOME:.apt/usr/bin:.apt/bin:.apt/sbin:.apt/usr/share:.apt/usr/lib > $HOME/.bashrc #be extra shure 
+echo export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$HOME:.apt/usr/lib/x86_64-linux-gnu > $HOME/.bashrc
 echo "starting install..."
 echo curent user is "$USER"
 echo "---------------------"
